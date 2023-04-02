@@ -1,0 +1,15 @@
+<h2>Characters Data</h2>
+<table class="table table-striped text-center">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Characters</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let character of characters">
+      <td>{{ character.name }}</td>
+      <td>{{ character.character }}</td>
+    </tr>
+  </tbody>
+</table>

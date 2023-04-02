@@ -11,6 +11,8 @@ import { QuestionSixComponent } from './components/question-six/question-six.com
 import { QuestionTenComponent } from './components/question-ten/question-ten.component';
 import { QuestionThreeComponent } from './components/question-three/question-three.component';
 import { QuestionTwoComponent } from './components/question-two/question-two.component';
+import { QuestionTwelveComponent } from './components/question-twelve/question-twelve.component';
+import { QuestionThirteenComponent } from './components/question-thirteen/question-thirteen.component';
 
 const routes: Routes = [
   {
@@ -62,6 +64,14 @@ const routes: Routes = [
     path: 'question-11',
     component: QuestionElevenComponent,
   },
+  {
+    path: 'question-12',
+    component: QuestionTwelveComponent,
+  },
+  {
+    path: 'question-13',
+    component: QuestionThirteenComponent,
+  },
 ];
 
 export const routingComponents = [
@@ -76,6 +86,8 @@ export const routingComponents = [
   QuestionNineComponent,
   QuestionTenComponent,
   QuestionElevenComponent,
+  QuestionTwelveComponent,
+  QuestionThirteenComponent,
 ];
 
 @NgModule({

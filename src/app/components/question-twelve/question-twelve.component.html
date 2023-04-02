@@ -1,0 +1,41 @@
+<h2>Books Data</h2>
+<table class="table table-striped text-center">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Title</th>
+      <th>Category</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let book of books">
+      <td>{{ book.id }}</td>
+      <td>{{ book.name }}</td>
+      <td>{{ book.category }}</td>
+    </tr>
+  </tbody>
+</table>
+<i class="fas fa-search" aria-hidden="true"></i>
+<input
+  class="form-control form-control-sm ml-3"
+  type="text"
+  id="search-book"
+  placeholder="Search book by id"
+  aria-label="Search"
+/>
+<table class="table table-striped text-center" *ngIf="serachedBook">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Title</th>
+      <th>Category</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>{{ serachedBook.id }}</td>
+      <td>{{ serachedBook.name }}</td>
+      <td>{{ serachedBook.category }}</td>
+    </tr>
+  </tbody>
+</table>
