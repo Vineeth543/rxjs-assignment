@@ -24,7 +24,7 @@ export class QuestionThreeComponent implements OnInit {
     fromEvent(document, 'click')
       .pipe(mergeMap((event) => of(event).pipe(debounce(() => interval(1000)))))
       .subscribe((data) => {
-        // console.log(data);
+        console.log(data);
       });
   }
 

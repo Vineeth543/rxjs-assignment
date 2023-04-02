@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { forkJoin, of } from 'rxjs';
+import { concat, forkJoin, of } from 'rxjs';
 
 @Component({
   selector: 'app-question-four',
@@ -15,7 +15,7 @@ export class QuestionFourComponent {
     let person1 = { age: 27, name: 'Foo' };
     let person2 = { age: 25, name: 'Bar' };
 
-    forkJoin([of(person1), of(person2)]).subscribe((person) => {
+    concat(of(person1), of(person2)).subscribe((person) => {
       this._answer = JSON.stringify(person);
     });
   }

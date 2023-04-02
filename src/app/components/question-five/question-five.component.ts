@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { forkJoin } from 'rxjs';
+import { forkJoin, map, of } from 'rxjs';
 
 @Component({
   selector: 'app-question-five',
@@ -12,9 +12,12 @@ export class QuestionFiveComponent {
   _answer: string = '';
 
   ngOnInit(): void {
-    forkJoin({ bar: Promise.resolve(9) }).subscribe((data) => {
-      this._answer = JSON.stringify(data);
-    });
+    forkJoin([of('bar'), Promise.resolve(9)])
+      .pipe(map((val) => '{' + val + '}'))
+      .subscribe((data) => {
+        console.log(Object(data));
+        this._answer = JSON.stringify(data);
+      });
   }
 
   showAnswer(): void {
