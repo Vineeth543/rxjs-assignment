@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
-import { interval, map, of, zipWith } from 'rxjs';
+import { interval, map, take } from 'rxjs';
 
 interface Character {
   name: string;
@@ -18,9 +18,10 @@ export class QuestionThirteenComponent {
   constructor(private http: HttpClient) {}
 
   ngOnInit(): void {
-    of('Calcifer', 'Alchemist', 'X-Men', 'Link')
-      .pipe(zipWith(interval(1000)))
-      .subscribe((data) => this.getCharacter(data[0]));
+    const characters = ['Calcifer', 'Alchemist', 'X-Men', 'Link'];
+    interval(1000)
+      .pipe(take(4))
+      .subscribe((index) => this.getCharacter(characters[index]));
   }
 
   getCharacter(name: string) {
